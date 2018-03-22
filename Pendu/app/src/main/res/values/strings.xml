@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pendu</string>
+    <string name="easy">Facile</string>
+    <string name="medium">Moyen</string>
+    <string name="hard">Difficile</string>
+    <string name="title_activity_pendu">PenduActivity</string>
+    <string name="send">Envoyer</string>
+    <string name="description">Image pendu</string>
+</resources>
