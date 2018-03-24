@@ -196,7 +196,7 @@ public class PenduActivity extends AppCompatActivity implements View.OnClickList
     public String generateWord(String mode) {
         wordList = getListWord();
         String word = "";
-        if (mode.equals("hard")) {
+        if (mode.equals("easy")) {
             while (word.length() < 6) {
                 int random = (int) Math.floor(Math.random() * wordList.size());
                 word = wordList.get(random).trim();
