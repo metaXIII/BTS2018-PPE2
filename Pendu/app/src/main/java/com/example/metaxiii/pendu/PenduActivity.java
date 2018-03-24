@@ -81,7 +81,7 @@ public class PenduActivity extends AppCompatActivity implements View.OnClickList
             }
             if (tmp == wordHidden.length()) {
                 game = true;
-                createDialog(game);
+                createDialog(game,mode);
             }
 
             if (!wordHidden.contains(saisie)) {
@@ -90,7 +90,7 @@ public class PenduActivity extends AppCompatActivity implements View.OnClickList
             setImage(error);
             if (error == 6) {
                 game = false;
-                createDialog(game);
+                createDialog(game, mode);
             }
             //Affiche les lettres entrées
             showBadCharacter(listOfLetters);
@@ -156,7 +156,7 @@ public class PenduActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    public void createDialog(boolean win) {
+    public void createDialog(boolean win, final String mode) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Vous avez gagné");
         if (!win) {
@@ -167,7 +167,8 @@ public class PenduActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                initGame(mode);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
 
