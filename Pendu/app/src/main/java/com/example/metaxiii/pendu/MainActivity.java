@@ -10,9 +10,6 @@ public class MainActivity extends AppCompatActivity {
     private Button easy;
     private Button medium;
     private Button hard;
-    private final int facile = 1;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
