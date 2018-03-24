@@ -5,12 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
     private Button easy;
     private Button medium;
     private Button hard;
+    private final int facile = 1;
 
 
 
@@ -28,27 +28,27 @@ public class MainActivity extends AppCompatActivity {
         easy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentEasy = new Intent(getApplicationContext(), PenduActivity.class);
-                intentEasy.putExtra("mode", easy.getText().toString());
-                startActivity(intentEasy);
+                Intent intent = new Intent(getApplicationContext(), PenduActivity.class);
+                intent.putExtra("mode", "easy");
+                startActivity(intent);
             }
         });
 
         medium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentMedium = new Intent(getApplicationContext(), PenduActivity.class);
-                intentMedium.putExtra("mode", medium.getText().toString());
-                startActivity(intentMedium);
+                Intent intent = new Intent(getApplicationContext(), PenduActivity.class);
+                intent.putExtra("mode", "medium");
+                startActivity(intent);
             }
         });
 
         hard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentHard = new Intent(getApplicationContext(), PenduActivity.class);
-                intentHard.putExtra("mode", hard.getText().toString());
-                startActivity(intentHard);
+                Intent intent = new Intent(getApplicationContext(), PenduActivity.class);
+                intent.putExtra("mode", "hard");
+                startActivity(intent);
             }
         });
     }

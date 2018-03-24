@@ -1,6 +1,7 @@
 package com.example.metaxiii.pendu;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import java.util.List;
 
 
 public class PenduActivity extends AppCompatActivity implements View.OnClickListener {
+
     private LinearLayout word_container;
     private Button btn_send;
     private TextView dead_word;
@@ -31,9 +33,14 @@ public class PenduActivity extends AppCompatActivity implements View.OnClickList
     private List<Character> listOfLetters = new ArrayList<>();
     private boolean game;
     private List<String> wordList = new ArrayList<>();
+    private String mode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Déclaration de la difficulté
+        Intent intent = getIntent();
+        String mode = intent.getStringExtra("mode");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pendu);
         word_container = findViewById(R.id.word_container);
@@ -41,13 +48,13 @@ public class PenduActivity extends AppCompatActivity implements View.OnClickList
         dead_word = findViewById(R.id.dead_word);
         letter = findViewById(R.id.letter);
         image = findViewById(R.id.image_pendu);
-        initGame();
+        initGame(mode);
         btn_send.setOnClickListener(this);
     }
 
 
-    public void initGame() {
-        wordHidden = generateWord();
+    public void initGame(String mode) {
+        wordHidden = generateWord(mode);
         game = false;
         error = 0;
         tmp = 0;
@@ -160,7 +167,7 @@ public class PenduActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                initGame();
+                initGame(mode);
             }
         });
 
@@ -185,10 +192,25 @@ public class PenduActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
-    public String generateWord() {
+    public String generateWord(String mode) {
         wordList = getListWord();
-        int random = (int) Math.floor(Math.random() * wordList.size());
-        String word = wordList.get(random).trim();
+        String word = "";
+        if (mode.equals("hard")) {
+            while (word.length() < 6) {
+                int random = (int) Math.floor(Math.random() * wordList.size());
+                word = wordList.get(random).trim();
+            }
+        } else if (mode.equals("medium")) {
+            while (word.length() < 4 || word.length() > 6) {
+                int random = (int) Math.floor(Math.random() * wordList.size());
+                word = wordList.get(random).trim();
+            }
+        } else {
+            while (word.length() > 4 || word.length() == 0) {
+                int random = (int) Math.floor(Math.random() * wordList.size());
+                word = wordList.get(random).trim();
+            }
+        }
         return word;
     }
 }

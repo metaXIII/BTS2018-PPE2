@@ -39,7 +39,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linearLayoutCompat">
 
         <EditText
             android:id="@+id/letter"
