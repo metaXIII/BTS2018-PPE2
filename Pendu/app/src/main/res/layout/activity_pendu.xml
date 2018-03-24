@@ -42,7 +42,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/word"
+            android:id="@+id/letter"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:maxLength="1" />

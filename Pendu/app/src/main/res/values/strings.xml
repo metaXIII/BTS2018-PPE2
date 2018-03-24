@@ -6,4 +6,5 @@
     <string name="title_activity_pendu">PenduActivity</string>
     <string name="send">Envoyer</string>
     <string name="description">Image pendu</string>
+    <string name="rejouer">Rejouer</string>
 </resources>
