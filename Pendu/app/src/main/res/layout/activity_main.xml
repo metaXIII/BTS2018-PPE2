@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blueClair"
     tools:context="com.example.metaxiii.pendu.MainActivity">
 
     <Button
@@ -12,8 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/easy"
         android:layout_above="@id/medium"
-        android:layout_centerInParent="true"
-        />
+        android:layout_centerInParent="true" />
 
     <Button
         android:id="@+id/medium"
@@ -29,5 +29,15 @@
         android:layout_below="@+id/medium"
         android:text="@string/hard"
         android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/multiplayer"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hard"
+        android:layout_centerInParent="true"
+        android:text="@string/multiplayer"
+        />
 
 </RelativeLayout>

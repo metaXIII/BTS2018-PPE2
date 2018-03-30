@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
     private Button easy;
     private Button medium;
     private Button hard;
+    private Button multiplayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         easy = findViewById(R.id.easy);
         medium = findViewById(R.id.medium);
         hard = findViewById(R.id.hard);
+        multiplayer = findViewById(R.id.multiplayer);
 
         easy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), PenduActivity.class);
                 intent.putExtra("mode", "hard");
+                startActivity(intent);
+            }
+        });
+
+        multiplayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MultiplayerActivity.class);
                 startActivity(intent);
             }
         });

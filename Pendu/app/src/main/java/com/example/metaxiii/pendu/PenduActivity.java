@@ -81,7 +81,7 @@ public class PenduActivity extends AppCompatActivity implements View.OnClickList
             }
             if (tmp == wordHidden.length()) {
                 game = true;
-                createDialog(game,mode);
+                createDialog(game, mode);
             }
 
             if (!wordHidden.contains(saisie)) {
@@ -206,11 +206,13 @@ public class PenduActivity extends AppCompatActivity implements View.OnClickList
                 int random = (int) Math.floor(Math.random() * wordList.size());
                 word = wordList.get(random).trim();
             }
-        } else {
-            while (word.length() > 4 || word.length() == 0) {
+        } else if (mode.equals("hard")) {
+            while (word.length() > 3 || word.length() == 0) {
                 int random = (int) Math.floor(Math.random() * wordList.size());
                 word = wordList.get(random).trim();
             }
+        } else {
+            word = mode;
         }
         return word;
     }

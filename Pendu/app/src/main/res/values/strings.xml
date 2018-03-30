@@ -7,4 +7,7 @@
     <string name="send">Envoyer</string>
     <string name="description">Image pendu</string>
     <string name="rejouer">Rejouer</string>
+    <string name="multiplayer">Deux Joueurs</string>
+    <string name="title_activity_multiplayer">MultiplayerActivity</string>
+    <string name="contentMultiplayer">Entrez le mot que votre ami devra deviner !</string>
 </resources>
